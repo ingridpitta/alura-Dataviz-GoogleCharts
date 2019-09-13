@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {packages: ['corechart']});
+            
+            function drawingPieChart(){
+                let tabela= new google.visualization.DataTable();
+                tabela.addColumn("string", "Categorias");
+                tabela.addColumn("number", "Valores");
+                tabela.addRows([
+                                    ["Educação", 200],
+                                    ["Transporte", 500],
+                                    ["Lazer", 230],
+                                    ["Saúde", 50],
+                                    ["Cartão de Crédito", 900],
+                                    ["Alimentação", 260]
+                                ]);
+
+                let newPieChart = new google.visualization.PieChart(document.getElementById('PieChart'));
+
+                newPieChart.draw(tabela);
+            }
+            
+            
+            google.charts.setOnLoadCallback(drawingPieChart);
+        </script>
+    </head>
+
+    <body>
+        <div id="PieChart"></div>
+    </body>
+</html>
